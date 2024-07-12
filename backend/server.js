@@ -1,9 +1,11 @@
 const express = require("express"); //Bring all the packages from the node modules
 const notes = require("./data/notes");
 const dotenv = require("dotenv");
+const connectDB = require("./config/db");
 
 const app = express(); //Object of the imported package
 dotenv.config();
+connectDB();
 
 app.get("/", (req, res) => {
   res.send("API is running");
